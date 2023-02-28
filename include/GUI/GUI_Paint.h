@@ -1,8 +1,10 @@
 #ifndef __GUI_PAINT_H
 #define __GUI_PAINT_H
 
+#include "LCD_Api.h"
 #include "DEV_Config.h"
 #include "fonts.h"
+
 
 /**
  * Image attributes
@@ -23,48 +25,7 @@ typedef struct {
 extern PAINT Paint;
 
 /**
- * Display rotate
-**/
-#define ROTATE_0            0
-#define ROTATE_90           90
-#define ROTATE_180          180
-#define ROTATE_270          270
-
-/**
- * Display Flip
-**/
-typedef enum {
-    MIRROR_NONE  = 0x00,
-    MIRROR_HORIZONTAL = 0x01,
-    MIRROR_VERTICAL = 0x02,
-    MIRROR_ORIGIN = 0x03,
-} MIRROR_IMAGE;
-#define MIRROR_IMAGE_DFT MIRROR_NONE
-
-/**
- * image color
-**/
-#define WHITE          0xFFFF
-#define BLACK          0x0000
-#define BLUE           0x001F
-#define BRED           0XF81F
-#define GRED           0XFFE0
-#define GBLUE          0X07FF
-#define RED            0xF800
-#define MAGENTA        0xF81F
-#define GREEN          0x07E0
-#define CYAN           0x7FFF
-#define YELLOW         0xFFE0
-#define BROWN          0XBC40
-#define BRRED          0XFC07
-#define GRAY           0X8430
-
-#define IMAGE_BACKGROUND    WHITE
-#define FONT_FOREGROUND     BLACK
-#define FONT_BACKGROUND     WHITE
-
-/**
- * The size of the point
+ * The size of a point
 **/
 typedef enum {
     DOT_PIXEL_1X1  = 1,	// 1 x 1
@@ -148,6 +109,5 @@ void Paint_DrawImage(const unsigned char *image, UWORD xStart, UWORD yStart, UWO
 void Paint_DrawImage1(const unsigned char *image, UWORD xStart, UWORD yStart, UWORD W_Image, UWORD H_Image);
  void Paint_BmpWindows(unsigned char x,unsigned char y,const unsigned char *pBmp,\
 					unsigned char chWidth,unsigned char chHeight);
-
 
 #endif

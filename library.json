@@ -1,0 +1,14 @@
+{
+  "name": "waveshare-pico-lcd",
+  "version": "0.0.0+20230216100406",
+  "build": {
+    "flags": [
+      "-Iinclude/Config",
+      "-Iinclude/examples",
+      "-Iinclude/Fonts",
+      "-Iinclude/GUI",
+      "-Iinclude/Icm20948",
+      "-Iinclude/infrared"
+    ]
+  }
+}
